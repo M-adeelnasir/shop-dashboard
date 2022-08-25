@@ -6,12 +6,19 @@ const initialState = {
     chat: false,
     cart: false,
     userProfile: false,
-    Notifications: false,
+    notifications: false,
 }
+
+
 
 export const ContextProvider = ({ children }) => {
     const [activeMenue, setActiveMenue] = useState(true)
-    return (<StateContext.Provider value={{ activeMenue, setActiveMenue }}>
+    const [isClicked, setIsClicked] = useState(initialState)
+
+    const handleClick = (clicked) => {
+        setIsClicked({ ...initialState, [clicked]: true })
+    }
+    return (<StateContext.Provider value={{ activeMenue, setActiveMenue, isClicked, setIsClicked, handleClick }}>
         {children}
     </StateContext.Provider>)
 }

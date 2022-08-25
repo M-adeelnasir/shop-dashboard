@@ -8,7 +8,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
 
-import { Cart, Notifications, ChartsHeader, Userprofile } from '.';
+import { Cart, Notifications, Chat, Userprofile } from '.';
 
 import { useStateContext } from '../context';
 
@@ -31,9 +31,9 @@ const NavButton = ({ color, dotColor, title, cusFunc, icon }) => (
 );
 
 const Navbar = () => {
-  const { activeMenue, setActiveMenue } = useStateContext();
+  const { activeMenue, setActiveMenue, isClicked, setIsClicked, handleClick } =
+    useStateContext();
 
-  const hanldeClick = () => {};
   return (
     <>
       <div className="flex items-center justify-between p-2 md:mx-6 relative">
@@ -46,19 +46,19 @@ const Navbar = () => {
         <div className="flex">
           <NavButton
             title="Cart"
-            cusFunc={() => hanldeClick('cart')}
+            cusFunc={() => handleClick('cart')}
             color="blue"
             icon={<FiShoppingCart />}
           />
           <NavButton
             title="Chat"
-            cusFunc={() => hanldeClick('chat')}
+            cusFunc={() => handleClick('chat')}
             color="blue"
             icon={<BsChatLeft />}
           />
           <NavButton
             title="Notifications"
-            cusFunc={() => hanldeClick('notifications')}
+            cusFunc={() => handleClick('notifications')}
             color="blue"
             icon={<RiNotification3Line />}
           />
@@ -66,7 +66,7 @@ const Navbar = () => {
             <TooltipComponent
               position="BottomCenter"
               content="Profile"
-              onClick={() => hanldeClick('userProfile')}
+              onClick={() => handleClick('userProfile')}
             >
               <div className="flex items-center p-1 hover:bg-light-gray rounded-lg gap-2 cursor-pointer">
                 <img src={avatar} alt="img" className="w-8 h-8 rounded-full " />
@@ -74,6 +74,10 @@ const Navbar = () => {
                 <span>{<MdKeyboardArrowDown />}</span>
               </div>
             </TooltipComponent>
+            {isClicked.cart && <Cart />}
+            {isClicked.chat && <Chat />}
+            {isClicked.notifications && <Notifications />}
+            {isClicked.userProfile && <Userprofile />}
           </div>
         </div>
       </div>
