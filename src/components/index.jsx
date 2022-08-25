@@ -9,8 +9,6 @@ export { default as Cart } from './Cart';
 export { default as Header } from './Header';
 export { default as Button } from './Button';
 export { default as Chat } from './Chat';
-export { default as Navbar } from './Navbar';
-export { default as Navbar } from './Navbar';
 
 export { default as Stacked } from './charts/Stacked';
 export { default as Pie } from './charts/Pie';
