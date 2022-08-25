@@ -5,6 +5,12 @@ import { Stacked, Pie, Sparked, Button } from '../components';
 import { useStateContext } from '../context';
 
 import {
+  Inject,
+  SparklineComponent,
+  SparklineTooltip,
+} from '@syncfusion/ej2-react-charts';
+
+import {
   earningData,
   SparklineAreaData,
   ecomPieChartData,
@@ -86,6 +92,17 @@ const Ecommerce = () => {
                   <span className="text-3xl font-semibold">$88,000,5</span>
                 </p>
                 <p className="mt-1 text-gray-500">Expense</p>
+              </div>
+              <div className="mt-5 " style={{ backgroundColor: '' }}>
+                <Sparked
+                  color="blue"
+                  id="sparkline"
+                  type="Line"
+                  height="80"
+                  width="250"
+                  data={SparklineAreaData}
+                  currentColor="blue"
+                />
               </div>
             </div>
           </div>
