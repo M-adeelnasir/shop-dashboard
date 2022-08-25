@@ -23,10 +23,10 @@ const App = () => {
         </div>
         {activeMenue ?
           <div className='w-72 fixed dark:bg-secondary-dark-bg bg-white' style={{ boxShadow: ' rgb(113 122 131 / 11 %) 0px 7px 30px 0px' }}>
-            <Navbar />
+            <Sidebar />
           </div> :
           <div className='w-0 '>
-            <Navbar />
+            <Sidebar />
           </div>}
         <div className={`dark:bg-main-bg bg-main-bg min-h-full w-full ${activeMenue ? 'md:ml-72' : 'flex-2'}`}>
           <div className="fixed md:static bg-main-bg dark:bg-secondary-dark-bg navbar w-full">
