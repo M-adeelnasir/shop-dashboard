@@ -5,12 +5,6 @@ import { Stacked, Pie, Sparked, Button } from '../components';
 import { useStateContext } from '../context';
 
 import {
-  Inject,
-  SparklineComponent,
-  SparklineTooltip,
-} from '@syncfusion/ej2-react-charts';
-
-import {
   earningData,
   SparklineAreaData,
   ecomPieChartData,
@@ -18,7 +12,7 @@ import {
 
 const Ecommerce = () => {
   return (
-    <div className="mt-5 sm:mt-10">
+    <div className="mt-10">
       {/* <div className="flex items-start flex-wrap lg:flex-nowrap justify-center ml-10">
         <div className="bg-white dark:text-gray-200 h-44 m-3 dark:bg-secondary-dark-bg w-full pt-9 bg-hero-pattern bg-no-repeat">
           <div className="flex rounded-lg justify-start items-center">
@@ -61,7 +55,7 @@ const Ecommerce = () => {
       </div>
       <div className="flex flex-wrap lg:flex-nowrap justify-start gap-10">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780">
-          <div className="flex justify-around">
+          <div className="flex justify-between">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <p className="flex items-center gap-2">
               <span>
@@ -76,7 +70,7 @@ const Ecommerce = () => {
               </p>
             </p>
           </div>
-          <div className="mt-10 flex gap-10 flex-wrap justify-center">
+          <div className="mt-2 flex gap-10 flex-wrap justify-center">
             <div className="border-r-1 border-color m-4 pr-10">
               <div>
                 <p>
@@ -104,6 +98,19 @@ const Ecommerce = () => {
                   currentColor="blue"
                 />
               </div>
+              <div className="mt-5">
+                <Button
+                  text="Download Reports"
+                  size="md"
+                  bgColor="blue"
+                  color="white"
+                  borderRadius="10px"
+                />
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <Stacked width="320" height="360" />
             </div>
           </div>
         </div>
