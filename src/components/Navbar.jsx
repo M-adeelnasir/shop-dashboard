@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -31,8 +31,33 @@ const NavButton = ({ color, dotColor, title, cusFunc, icon }) => (
 );
 
 const Navbar = () => {
-  const { activeMenue, setActiveMenue, isClicked, setIsClicked, handleClick } =
-    useStateContext();
+  const {
+    activeMenue,
+    setActiveMenue,
+    isClicked,
+    setIsClicked,
+    handleClick,
+    screenSize,
+    setScreenSize,
+  } = useStateContext();
+
+  //size of our screen
+  useEffect(() => {
+    const handleREsize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener('resize', handleREsize);
+    handleREsize();
+
+    return () => window.removeEventListener('resize', handleREsize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenue(false);
+    } else {
+      setActiveMenue(true);
+    }
+  }, [screenSize]);
 
   return (
     <>
