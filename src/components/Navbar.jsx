@@ -21,11 +21,10 @@ const NavButton = ({ color, dotColor, title, cusFunc, icon }) => (
       className="relative text-xl rounded-full p-3 hover:bg-light-gray"
     >
       <span
-        style={{ backgroundColor: dotColor }}
-        // className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      >
-        {icon}
-      </span>
+        style={{ background: dotColor }}
+        className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+      ></span>
+      {icon}
     </button>
   </TooltipComponent>
 );
@@ -77,12 +76,14 @@ const Navbar = () => {
           />
           <NavButton
             title="Chat"
+            dotColor="#03C9D7"
             cusFunc={() => handleClick('chat')}
             color="blue"
             icon={<BsChatLeft />}
           />
           <NavButton
             title="Notifications"
+            dotColor="#03C9D7"
             cusFunc={() => handleClick('notifications')}
             color="blue"
             icon={<RiNotification3Line />}

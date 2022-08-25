@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
@@ -15,7 +15,14 @@ const normalLink =
   'flex items-center gap-5 pl-5 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
 
 const Sidebar = () => {
-  const { activeMenue, setActiveMenue } = useStateContext();
+  const { activeMenue, setActiveMenue, screenSize, setScreenSize } =
+    useStateContext();
+
+  const handleCLoseSideBar = () => {
+    if (activeMenue && screenSize <= 900) {
+      setActiveMenue(false);
+    }
+  };
 
   return (
     <>
@@ -25,7 +32,7 @@ const Sidebar = () => {
             <div className="flex justify-between items-center">
               <Link
                 to="/"
-                onClick={() => setActiveMenue(false)}
+                onClick={handleCLoseSideBar}
                 className="items-center flex gap-2 mt-4 text-xl font-extrabold dark:text-white text-slate-900 ml-3 tracking-tight"
               >
                 <SiShopware /> <span>Shoppy</span>
@@ -54,7 +61,7 @@ const Sidebar = () => {
                         isActive ? activeLink : normalLink
                       }
                       to={`/${item.name}`}
-                      onClick={() => {}}
+                      onClick={handleCLoseSideBar}
                     >
                       {item.icon}
                       <span className="capitalize">{item.name}</span>
