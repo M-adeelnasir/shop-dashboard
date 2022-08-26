@@ -54,9 +54,9 @@ const Ecommerce = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap lg:flex-nowrap justify-start gap-10">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780">
-          <div className="flex justify-between">
+      <div className="flex flex-wrap lg:flex-nowrap justify-start gap-10 ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl w-full">
+          <div className="flex justify-around">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <p className="flex items-center gap-2">
               <span>
