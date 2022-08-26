@@ -31,10 +31,9 @@ const NavButton = ({ color, dotColor, title, cusFunc, icon }) => (
 
 const Navbar = () => {
   const {
-    activeMenue,
+    currentColor,
     setActiveMenue,
     isClicked,
-    setIsClicked,
     handleClick,
     screenSize,
     setScreenSize,
@@ -64,28 +63,28 @@ const Navbar = () => {
         <NavButton
           title="Menue"
           cusFunc={() => setActiveMenue((prev) => !prev)}
-          color="blue"
+          color={currentColor}
           icon={<AiOutlineMenu />}
         />
         <div className="flex">
           <NavButton
             title="Cart"
             cusFunc={() => handleClick('cart')}
-            color="blue"
+            color={currentColor}
             icon={<FiShoppingCart />}
           />
           <NavButton
             title="Chat"
             dotColor="#03C9D7"
             cusFunc={() => handleClick('chat')}
-            color="blue"
+            color={currentColor}
             icon={<BsChatLeft />}
           />
           <NavButton
             title="Notifications"
             dotColor="#03C9D7"
             cusFunc={() => handleClick('notifications')}
-            color="blue"
+            color={currentColor}
             icon={<RiNotification3Line />}
           />
           <div>

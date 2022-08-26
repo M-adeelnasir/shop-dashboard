@@ -11,6 +11,7 @@ import {
 } from '../data/dummy';
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-10">
       {/* <div className="flex items-start flex-wrap lg:flex-nowrap justify-center ml-10">
@@ -22,7 +23,7 @@ const Ecommerce = () => {
               <Button
                 text="Download"
                 color="white"
-                bgColor="blue"
+                bgColor={currentColor}
                 borderRadius="10px"
                 size="md"
               />
@@ -89,20 +90,20 @@ const Ecommerce = () => {
               </div>
               <div className="mt-5 " style={{ backgroundColor: '' }}>
                 <Sparked
-                  color="blue"
+                  color={currentColor}
                   id="sparkline"
                   type="Line"
                   height="80"
                   width="250"
                   data={SparklineAreaData}
-                  currentColor="blue"
+                  currentColor={currentColor}
                 />
               </div>
               <div className="mt-5">
                 <Button
                   text="Download Reports"
                   size="md"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   color="white"
                   borderRadius="10px"
                 />
