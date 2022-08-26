@@ -14,7 +14,7 @@ import { useStateContext } from './context'
 
 const App = () => {
 
-  const { activeMenue } = useStateContext()
+  const { activeMenue, themeSetings, setThemeSettings } = useStateContext()
 
   // useEffect(() => {
   //   console.log(activeMenue);
@@ -23,9 +23,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='flex relative dark:bg-main-dark-bg'>
-        <div className='fixed right-4 bottom-4'>
-          <TooltipComponent position='Top' content="Settings" >
-            <button className='text-3xl p-3 text-white rounded-full hover:drop-shadow-xl hover:bg-light-gray' style={{ background: 'blue' }}>
+        <div className='fixed right-4 bottom-4' onClick={() => setThemeSettings(true)} >
+          <TooltipComponent position='Top' content="Settings">
+            <button className='text-3xl p-3 text-white rounded-full hover:drop-shadow-xl hover:bg-light-gray' style={{ background: 'blue' }} >
               <FiSettings />
             </button>
           </TooltipComponent>
@@ -43,7 +43,7 @@ const App = () => {
             <Navbar />
           </div>
           <div>
-            <ThemeSet />
+            {themeSetings && <ThemeSet />}
             <Routes>
               <Route path='/' element={<Ecommerce />} />
               <Route path='/ecommerce' element={<Ecommerce />} />

@@ -7,8 +7,17 @@ import { themeColors } from '../data/dummy';
 import { useStateContext } from '../context';
 
 const ThemeSet = () => {
-  const { setActiveMenue } = useStateContext();
-  let currentColor;
+  const {
+    setActiveMenue,
+    setMode,
+    setColor,
+    currentColor,
+    setCurrentColor,
+    currentMode,
+    setCurrentMode,
+    themeSetings,
+    setThemeSettings,
+  } = useStateContext();
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
       <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400">
@@ -16,7 +25,7 @@ const ThemeSet = () => {
           <p className="text-lg font-semibold">Settings</p>
           <button
             type="button"
-            onClick={() => {}}
+            onClick={() => setThemeSettings(false)}
             className="p-2 hover:bg-light-gray rounded-full text-xl text-gray-600"
           >
             <MdOutlineCancel />
