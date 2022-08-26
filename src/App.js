@@ -14,7 +14,7 @@ import { useStateContext } from './context'
 
 const App = () => {
 
-  const { activeMenue, themeSetings, setThemeSettings } = useStateContext()
+  const { activeMenue, themeSetings, setThemeSettings, currentColor } = useStateContext()
 
   // useEffect(() => {
   //   console.log(activeMenue);
@@ -25,7 +25,7 @@ const App = () => {
       <div className='flex relative dark:bg-main-dark-bg'>
         <div className='fixed right-4 bottom-4' onClick={() => setThemeSettings(true)} >
           <TooltipComponent position='Top' content="Settings">
-            <button className='text-3xl p-3 text-white rounded-full hover:drop-shadow-xl hover:bg-light-gray' style={{ background: 'blue' }} >
+            <button className='text-3xl p-3 text-white rounded-full hover:drop-shadow-xl hover:bg-light-gray' style={{ background: currentColor }} >
               <FiSettings />
             </button>
           </TooltipComponent>
