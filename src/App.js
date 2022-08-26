@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { Affix } from 'antd';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
@@ -37,9 +39,11 @@ const App = () => {
           </div>}
         <div className={`dark:bg-main-bg bg-main-bg min-h-full w-full ${activeMenue ? 'md:ml-72' : 'flex-2'}`}>
           <div className="fixed md:static bg-main-bg dark:bg-secondary-dark-bg navbar w-full">
+
             <Navbar />
           </div>
           <div>
+            <ThemeSet />
             <Routes>
               <Route path='/' element={<Ecommerce />} />
               <Route path='/ecommerce' element={<Ecommerce />} />
