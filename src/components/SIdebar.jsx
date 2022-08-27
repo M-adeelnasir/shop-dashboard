@@ -15,13 +15,18 @@ const normalLink =
   'flex items-center gap-5 pl-5 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
 
 const Sidebar = () => {
-  const { activeMenue, setActiveMenue, screenSize, currentColor } =
+  const { activeMenue, setActiveMenue, screenSize, currentColor, handleClose } =
     useStateContext();
 
   const handleCLoseSideBar = () => {
     if (activeMenue && screenSize <= 900) {
       setActiveMenue(false);
     }
+  };
+
+  const hanldeSideNavClick = () => {
+    handleClose();
+    handleCLoseSideBar();
   };
 
   return (
@@ -61,7 +66,7 @@ const Sidebar = () => {
                         isActive ? activeLink : normalLink
                       }
                       to={`/${item.name}`}
-                      onClick={handleCLoseSideBar}
+                      onClick={hanldeSideNavClick}
                       style={({ isActive }) => ({
                         backgroundColor: isActive ? currentColor : '',
                       })}
