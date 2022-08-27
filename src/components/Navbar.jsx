@@ -99,11 +99,11 @@ const Navbar = () => {
                 <span>{<MdKeyboardArrowDown />}</span>
               </div>
             </TooltipComponent>
-            {isClicked.cart && <Cart />}
-            {isClicked.chat && <Chat />}
-            {isClicked.notifications && <Notifications />}
-            {isClicked.userProfile && <Userprofile />}
           </div>
+          {isClicked.cart && <Cart />}
+          {isClicked.chat && <Chat />}
+          {isClicked.notifications && <Notifications />}
+          {isClicked.userProfile && <Userprofile />}
         </div>
       </div>
     </>
